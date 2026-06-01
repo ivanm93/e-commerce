@@ -1,0 +1,52 @@
+/* Footer styles matching RevParts theme */
+@import "./Navbar.css";
+
+.revparts-footer {
+  background: var(--rp-bg);
+  color: var(--rp-text);
+  border-top: 1px solid var(--rp-border);
+}
+
+.revparts-footer-top {
+  background: var(--rp-surface);
+  padding: 28px 0;
+}
+
+.revparts-footer-inner {
+  padding: 0 24px;
+}
+
+.revparts-footer-brand {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.revparts-logo.small {
+  width: 44px;
+  height: 44px;
+  background: var(--rp-orange);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.revparts-brand-name { font-weight: 700; color: var(--rp-text); }
+.revparts-brand-sub { font-size: 12px; color: var(--rp-muted); }
+
+.revparts-footer-links { list-style: none; padding: 0; margin: 6px 0 0; }
+.revparts-footer-links li { margin-bottom: 6px; }
+.revparts-footer-links a { color: var(--rp-muted); text-decoration: none; }
+.revparts-footer-links a:hover { color: var(--rp-text); }
+
+.revparts-footer-bottom { padding: 12px 0; }
+.revparts-footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+}
+
+.revparts-footer-legal a { margin-left: 12px; color: var(--rp-muted); text-decoration: none; }

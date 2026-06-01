@@ -52,18 +52,31 @@
 
 body {
   margin: 0;
+  background: #ffffff;
 }
 
 #root {
-  width: 1126px;
+  width: 100%;
   max-width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
+  margin: 0;
+  text-align: left;
+  /* remove border-inline to allow full-bleed layout */
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+/* Main app content (between navbar and footer) centered with a max width */
+.app-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0; /* remove spacing between navbar/content/footer */
+  box-sizing: border-box;
+  /* harmonic background to blend with navbar/footer (uses a soft surface color)
+     this will be overridden inside pages that want different backgrounds */
+  background: #f6f7f8;
 }
 
 h1,
@@ -108,4 +121,17 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* contact form frame used by Contacto page */
+.contact-form-frame {
+  background: #ffffff;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+}
+
+/* adjust product card padding/margins for full-bleed layout */
+.prod-card {
+  margin: 0;
 }
