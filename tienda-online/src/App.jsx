@@ -1,38 +1,68 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CarritoProvider } from "./components/CarritoContext";
-import RevPartsNavbar from "./components/Navbar";
 import { useState } from "react";
 
-import Inicio from "./pages/inicio.jsx";
+import RevPartsNavbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import { CarritoProvider } from "./contexts/CarritoContext";
+import { ToastProvider } from "./contexts/ToastContext";
+
+import Inicio from "./pages/Inicio/Inicio";
 import Productos from "./pages/Productos";
 import DetalleProducto from "./pages/DetalleProducto";
 import Carrito from "./pages/Carrito";
-import Contacto from "./pages/Contacto";
-import Nosotros from "./pages/Nosotros";
-import Footer from "./components/Footer";
+import Contacto from "./pages/Contacto/Contacto";
+import Nosotros from "./pages/Nosotros/Nosotros";
 
 export default function App() {
   const [categoriaActiva, setCategoriaActiva] = useState("");
 
   return (
-    <CarritoProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ToastProvider>
+        <CarritoProvider>
         <RevPartsNavbar
-          onCategoriaSelect={setCategoriaActiva}
           categoriaActiva={categoriaActiva}
+          onCategoriaSelect={setCategoriaActiva}
         />
-        <div className="app-content">
+
+        <main className="app-content">
           <Routes>
-            <Route path="/"            element={<Inicio />} />
-            <Route path="/productos"   element={<Productos categoriaActiva={categoriaActiva} />} />
-            <Route path="/producto/:id" element={<DetalleProducto />} />
-            <Route path="/carrito"     element={<Carrito />} />
-            <Route path="/contacto"    element={<Contacto />} />
-            <Route path="/nosotros"    element={<Nosotros />} />
+            <Route path="/" element={<Inicio />} />
+
+            <Route
+              path="/productos"
+              element={
+                <Productos
+                  categoriaActiva={categoriaActiva}
+                />
+              }
+            />
+
+            <Route
+              path="/producto/:id"
+              element={<DetalleProducto />}
+            />
+
+            <Route
+              path="/carrito"
+              element={<Carrito />}
+            />
+
+            <Route
+              path="/contacto"
+              element={<Contacto />}
+            />
+
+            <Route
+              path="/nosotros"
+              element={<Nosotros />}
+            />
           </Routes>
-        </div>
+        </main>
+
         <Footer />
-      </BrowserRouter>
-    </CarritoProvider>
+        </CarritoProvider>
+      </ToastProvider>
+    </BrowserRouter>
   );
 }

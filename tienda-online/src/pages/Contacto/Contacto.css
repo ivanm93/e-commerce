@@ -1,0 +1,166 @@
+.contact-page {
+  background: #0b0b0b;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* HERO */
+
+.contact-hero {
+  position: relative;
+  padding: 90px 0 70px;
+  background:
+    linear-gradient(
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.75)
+    ),
+    url("/banner.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.breadcrumb-custom {
+  color: #999;
+  margin-bottom: 12px;
+  font-size: .95rem;
+}
+
+.contact-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.contact-hero p {
+  color: #cfcfcf;
+  max-width: 600px;
+  font-size: 1.1rem;
+}
+
+/* FORMULARIO */
+
+.contact-card {
+  background: rgba(20,20,20,.95);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 30px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.contact-card .form-label {
+  color: #fff;
+  font-weight: 500;
+}
+
+.contact-card .form-control,
+.contact-card .form-select {
+  background: #111;
+  border: 1px solid #2b2b2b;
+  color: white;
+  padding: 12px;
+}
+
+.contact-card .form-control::placeholder {
+  color: #777;
+}
+
+.contact-card .form-control:focus,
+.contact-card .form-select:focus {
+  background: #111;
+  color: white;
+  border-color: #ff6a00;
+  box-shadow: 0 0 0 0.2rem rgba(255,106,0,.15);
+}
+
+/* BOTÓN */
+
+.btn-revparts {
+  background: #ff6a00;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btn-revparts:hover {
+  background: #ff7f26;
+  transform: translateY(-2px);
+}
+
+/* PANEL DERECHO */
+
+.contact-info-panel {
+  background: rgba(20,20,20,.95);
+  border-radius: 18px;
+  padding: 30px;
+  height: 100%;
+  border-left: 4px solid #ff6a00;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+.contact-info-panel h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.contact-info-panel p {
+  color: #b5b5b5;
+  margin-bottom: 30px;
+}
+
+/* ITEMS */
+
+.info-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-item svg {
+  color: #ff6a00;
+  font-size: 1.4rem;
+  min-width: 24px;
+  margin-top: 3px;
+}
+
+.info-item strong {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.info-item span {
+  color: #c7c7c7;
+}
+
+/* SELECT */
+
+.form-select option {
+  background: #111;
+  color: white;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 992px) {
+
+  .contact-hero {
+    padding: 70px 0 50px;
+  }
+
+  .contact-hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .contact-card,
+  .contact-info-panel {
+    padding: 22px;
+  }
+}

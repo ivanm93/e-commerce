@@ -39,10 +39,8 @@ export default function Footer() {
       <div className="revparts-footer-bottom">
         <Container fluid className="px-4 px-lg-5">
           <div className="revparts-footer-bottom-inner">
-            <small>© {new Date().getFullYear()} RevParts · Todos los derechos reservados</small>
             <div className="revparts-footer-legal">
-              <Link to="/terminos">Términos</Link>
-              <Link to="/privacidad">Privacidad</Link>
+   <small>© {new Date().getFullYear()} RevParts · Todos los derechos reservados</small>
             </div>
           </div>
         </Container>

@@ -25,4 +25,3 @@ export default function CarritoItem({ item, onChangeQty, onRemove }) {
     </tr>
   );
 }
-// (removed accidental self re-export that caused a circular reference)

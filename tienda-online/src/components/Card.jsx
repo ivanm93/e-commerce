@@ -1,8 +1,12 @@
 import { Card as BCard, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { useCarrito } from "../contexts/CarritoContext";
 
 export default function ProductCard({ producto, onAgregar }) {
-  const disponible = producto.stock > 0;
+  const { items } = useCarrito();
+  const inCart = items.find((it) => it.producto.id === producto.id);
+  const cartQty = inCart ? Number(inCart.qty || 0) : 0;
+  const disponible = producto.stock > 0 && cartQty < Number(producto.stock || 0);
   const navigate = useNavigate();
 
   function handleAdd(e) {

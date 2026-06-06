@@ -1,5 +1,5 @@
 /* Footer styles matching RevParts theme */
-@import "./Navbar.css";
+@import "./Footer.css";
 
 .revparts-footer {
   background: var(--rp-bg);

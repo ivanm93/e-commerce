@@ -1,0 +1,41 @@
+/* Estilos para la página Nosotros */
+
+.nosotros-hero {
+  background-image: url('/banner.png');
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  padding: 80px 0 100px;
+  position: relative;
+}
+
+.nosotros-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17,18,16,0.6), rgba(17,18,16,0.6));
+}
+
+.nosotros-hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
+.breadcrumb { color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+.nosotros-title { font-size: 48px; margin: 0 0 12px; font-family: Georgia, 'Times New Roman', serif; }
+.nosotros-lead { font-size: 18px; color: rgba(255,255,255,0.9); max-width: 70%; }
+
+.nosotros-main { background: #0f0f10; color: rgba(255,255,255,0.92); padding-top: 48px; }
+.nosotros-media img { width: 100%; border-radius: 8px; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
+
+.features .feature-card { background: rgba(255,255,255,0.02); padding: 20px; border-radius: 10px; text-align: center; color: rgba(255,255,255,0.9); }
+.feature-num { font-size: 28px; font-weight: 700; color: var(--rp-orange); }
+.feature-sub { margin-top: 6px; color: rgba(255,255,255,0.85); }
+
+.values .value-card { background: rgba(255,255,255,0.02); padding: 18px; border-radius: 10px; min-height: 160px; }
+.value-card h5 { color: var(--rp-orange); }
+
+.contact-cta .contact-card { background: rgba(255,255,255,0.02); padding: 22px; border-radius: 10px; }
+.contact-box { background: rgba(255,255,255,0.03); padding: 18px; border-radius: 10px; color: rgba(255,255,255,0.95); }
+.contact-item { margin-bottom: 8px; }
+
+@media (max-width: 991px) {
+  .nosotros-lead { max-width: 100%; }
+  .nosotros-title { font-size: 32px; }
+}

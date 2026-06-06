@@ -63,15 +63,16 @@
   gap: 16px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 /* ── Brand ── */
 .revparts-brand {
-  display: flex !important;
+  display: flex;
   align-items: center;
   gap: 10px;
-  text-decoration: none !important;
-  padding: 0 !important;
+  text-decoration: none;
+  padding: 0;
   flex-shrink: 0;
 }
 
@@ -108,73 +109,31 @@
   text-transform: uppercase;
 }
 
-/* ── Búsqueda ── */
-.revparts-search-form {
-  flex: 1;
-  max-width: 380px;
-}
-
-.revparts-search-wrap {
-  position: relative;
-  width: 100%;
-}
-
-.revparts-search-icon {
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--rp-muted);
-  pointer-events: none;
-}
-
-.revparts-search-input.form-control {
-  background: var(--rp-surface) !important;
-  border: 1px solid var(--rp-border) !important;
-  border-radius: 8px !important;
-  color: var(--rp-text) !important;
-  font-size: 13px !important;
-  padding: 8px 14px 8px 34px !important;
-  height: 38px;
-  transition: border-color 0.15s;
-}
-
-.revparts-search-input.form-control::placeholder {
-  color: var(--rp-muted);
-}
-
-.revparts-search-input.form-control:focus {
-  border-color: var(--rp-orange) !important;
-  box-shadow: 0 0 0 3px rgba(232, 89, 12, 0.15) !important;
-  outline: none;
-}
-
 /* ── Nav right (carrito + toggle) ── */
-.revparts-nav-right {
+/* left / right split containers */
+.revparts-left {
   display: flex;
   align-items: center;
-  gap: 8px;
-  flex-shrink: 0;
+  gap: 12px;
 }
 
-/* push the cart/hamburger group to the far right of the navbar */
-.revparts-nav-container > .revparts-nav-right {
-  margin-left: auto;
+.revparts-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/* On wide screens ensure the collapse (links) sits between brand and cart
-   and the cart group stays at the far right. This fixes a layout issue
-   where the cart could end up left of the links around ~980px. */
 @media (min-width: 980px) {
+  .revparts-left {
+    order: 1;
+  }
+
   .revparts-collapse {
     order: 2;
   }
-  .revparts-nav-right {
+
+  .revparts-right {
     order: 3;
-    margin-left: auto; /* ensure it's pushed right */
-  }
-  .revparts-brand {
-    order: 1;
   }
 }
 
@@ -220,6 +179,9 @@
   line-height: 1.4;
 }
 
+.revparts-cart-btn { position: relative; }
+.revparts-cart-badge { position: absolute; top: -8px; right: -8px; }
+
 /* ── Hamburger ── */
 .revparts-toggle.navbar-toggler {
   border: 1px solid var(--rp-border) !important;
@@ -234,7 +196,17 @@
 
 /* ── Links colapsables ── */
 .revparts-collapse {
-  justify-content: flex-end;
+  /* keep collapse and its links together */
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+/* new right group: contains cart and toggle; sits immediately after collapse */
+.revparts-right-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .revparts-links {
@@ -244,21 +216,22 @@
   flex-wrap: nowrap;
 }
 
-.revparts-link.nav-link {
-  color: var(--rp-muted) !important;
+.revparts-links .nav-link {
+  color: var(--rp-text); /* make links visible */
   font-size: 13px;
   padding: 7px 12px !important;
   border-radius: 7px;
   transition: background 0.12s, color 0.12s;
   white-space: nowrap;
+  opacity: 1 !important;
 }
 
-.revparts-link.nav-link:hover {
+.revparts-links .nav-link:hover {
   background: rgba(255, 255, 255, 0.05);
   color: var(--rp-text) !important;
 }
 
-.revparts-link.nav-link.active {
+.revparts-links .nav-link.active {
   background: var(--rp-orange-dim);
   color: var(--rp-orange) !important;
 }
